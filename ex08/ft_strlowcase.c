@@ -6,13 +6,13 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:46:52 by sohan             #+#    #+#             */
-/*   Updated: 2021/03/31 23:17:42 by sohan            ###   ########.fr       */
+/*   Updated: 2021/04/01 06:09:37 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int is_other(char str, int flag)
+int		is_other(char str, int flag)
 {
 	if (str > 64 && str < 91)
 	{
@@ -39,21 +39,4 @@ char	*ft_strlowcase(char *str)
 		count++;
 	}
 	return (str);
-}
-
-int main()
-{
-	char myarr[] = "AAAddd";
-	char *test;
-	char *result;
-	int i;
-
-	test = myarr;
-	result = ft_strlowcase(test);
-	i = 0;
-	while(result[i] != '\0')
-	{
-		printf("%c",result[i]);
-		i++;
-	}
 }

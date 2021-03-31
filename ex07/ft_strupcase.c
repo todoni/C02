@@ -6,18 +6,20 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:46:52 by sohan             #+#    #+#             */
-/*   Updated: 2021/03/31 23:06:29 by sohan            ###   ########.fr       */
+/*   Updated: 2021/04/01 06:07:45 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int is_other(char str, int flag)
+int		is_other(char str, int flag)
 {
-	if (str > 97 && str < 123)
+	if (str > 96 && str < 123)
 	{
 		flag = 0;
+		return (flag);
 	}
+	flag = 1;
 	return (flag);
 }
 
@@ -30,7 +32,6 @@ char	*ft_strupcase(char *str)
 	flag = 1;
 	while (str[count] != '\0')
 	{
-		flag = 1;
 		flag = is_other(str[count], flag);
 		if (flag == 0)
 		{
@@ -39,21 +40,4 @@ char	*ft_strupcase(char *str)
 		count++;
 	}
 	return (str);
-}
-
-int main()
-{
-	char myarr[] = "AAAddd";
-	char *test;
-	char *result;
-	int i;
-
-	test = myarr;
-	result = ft_strupcase(test);
-	i = 0;
-	while(result[i] != '\0')
-	{
-		printf("%c",result[i]);
-		i++;
-	}
 }

@@ -6,14 +6,14 @@
 /*   By: sohan <sohan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:46:52 by sohan             #+#    #+#             */
-/*   Updated: 2021/04/01 04:39:23 by sohan            ###   ########.fr       */
+/*   Updated: 2021/04/01 06:38:22 by sohan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int is_non_printable(char str, int flag)
+int		is_non_printable(char str, int flag)
 {
 	if (str < 32 || str > 126)
 	{
@@ -24,8 +24,8 @@ int is_non_printable(char str, int flag)
 
 void	hexademical(char str)
 {
-	char hex[2];
-	int i;
+	char	hex[2];
+	int		i;
 
 	i = 1;
 	while (str != 0)
@@ -51,16 +51,16 @@ void	hexademical(char str)
 	write(1, hex + 1, 1);
 }
 
-int	ft_putstr_non_printable(char *str)
+int		ft_putstr_non_printable(char *str)
 {
 	int flag;
 	int count;
-	
+
 	flag = 0;
 	count = 0;
 	while (str[count] != '\0')
 	{
-		flag = is_non_printable(str[count], flag);	
+		flag = is_non_printable(str[count], flag);
 		if (flag == 1)
 		{
 			hexademical(str[count]);
@@ -73,17 +73,4 @@ int	ft_putstr_non_printable(char *str)
 		count++;
 	}
 	return (flag);
-}
-
-int main()
-{
-	//char myarr[] = "\rasd\bfCdfWR@!\vsdf\t\t";
-	char myarr[] = "rasdbfCd:\nfWR@!sdf";
-	char *test;
-	int result;
-
-	test = myarr;
-	result = ft_putstr_non_printable(test);
-	printf("%d",result);
-	return 0;
 }
